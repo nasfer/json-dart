@@ -1,0 +1,43 @@
+import 'dart:convert';
+
+
+void main (){
+  
+  // estilo de json
+  String json = '''  
+    {
+      "usuario": "wander",
+      "senha": 123456,
+      "permissoes": [
+        "owner", "admin"
+      ]    
+    }  
+  ''';  
+  
+  
+  print(json);
+  
+  // converte para formato Map
+  Map resultJson = jsonDecode(json);
+  //posso imprimir lista dentro do map usando o indice após a chave
+  print(resultJson['permissoes'][0]);
+  
+  
+  // criando um map
+  Map mapa = {
+    
+    'nome': 'wander',
+    'senha': 123456,
+    'permissoes': [
+      
+      'onwer', 'admin'
+    ]
+  };
+  
+  // converte para Json
+  var transfJson = jsonEncode(mapa);
+  print(transfJson);
+  
+  
+  
+}
